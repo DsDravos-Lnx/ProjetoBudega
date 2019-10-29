@@ -26,4 +26,12 @@ Route::namespace('Api')->name('api.')->group(function(){
         Route::put('/{id}', 'AdminController@update')->name('update_admins');
         Route::delete('/{id}', 'AdminController@delete')->name('delete_admins');
     });
+
+    Route::prefix('clients')->group(function(){
+        Route::get('/', 'ClientController@index')->name('index_clients');
+        Route::get('/{id}', 'ClientController@show')->name('single_clients');
+        Route::post('/', 'ClientController@store')->name('store_clients');
+        Route::put('/{id}', 'ClientController@update')->name('update_clients');
+        Route::delete('/{id}', 'ClientController@delete')->name('delete_clients');
+    });
 });
