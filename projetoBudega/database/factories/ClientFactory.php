@@ -4,14 +4,16 @@
 
 use App\Model;
 use Faker\Generator as Faker;
+use App\Client;
 
-$factory->define(Model::class, function (Faker $faker) {
+$factory->define(Client::class, function (Faker $faker) {
     return [
         'name' => $faker->name,
         'cpf' => '999.999.999-99',
-        'contact' => '(99) 99999-9999',
+        'contact' => $faker->phoneNumber,
         'address' => $faker->name,
+        'gender' => 'male',
         
-
+        
     ];
 });

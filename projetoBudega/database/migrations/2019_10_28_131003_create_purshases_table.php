@@ -25,6 +25,9 @@ class CreatePurshasesTable extends Migration
             $table->foreign('product_id')->references('id')->on('products');
             $table->foreign('client_id')->references('id')->on('clients');
 
+            $table->usignedBigInteger('created_by');
+            $table->usignedBigInteger('update_by');
+
             $table->timestamps();
         });
     }

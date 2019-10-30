@@ -23,6 +23,9 @@ class CreateClientsTable extends Migration
             $table->string('gender');
             $table->unsignedSmallInteger('age');
            
+            $table->usignedBigInteger('created_by');
+            $table->usignedBigInteger('update_by');
+
             $table->timestamps();
         });
     }

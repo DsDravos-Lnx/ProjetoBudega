@@ -60,7 +60,7 @@ class ClientController extends Controller
             return response()->json(['data' => ['msg' => 'Client name:' . $id->name . 'successfully deleted']]);
         }catch(\Exception $e){
             if(config('app.debug')){
-                return response()->json(ApiError::erorMessage($e->getMessage(), 1003));
+                return response()->json(ApiError::errorMessage($e->getMessage(), 1003));
             }
             return response()->json(ApiError::errorMessage('Erros deleting Client', 1003));
         }

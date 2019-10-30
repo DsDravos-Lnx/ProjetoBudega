@@ -22,12 +22,12 @@ class CreateProductsTable extends Migration
             $table->float('price', 8, 2);
             $table->boolean('available');
 
-            $table->unsignedBigInteger('supplier_id');
             $table->unsignedBigInteger('stock_id');
 
             $table->foreign('stock_id')->references('id')->on('stocks');
-            $table->foreign('supplier_id')->references('id')->on('suppliers');
-
+            
+            $table->usignedBigInteger('created_by');
+            $table->usignedBigInteger('update_by');
 
             $table->timestamps();
         });

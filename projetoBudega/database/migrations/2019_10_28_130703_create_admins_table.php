@@ -20,6 +20,9 @@ class CreateAdminsTable extends Migration
             $table->string('email');
             $table->string('login');
             $table->string('password');
+
+            $table->usignedBigInteger('created_by');
+            $table->usignedBigInteger('update_by');
           
             $table->timestamps();
         });
