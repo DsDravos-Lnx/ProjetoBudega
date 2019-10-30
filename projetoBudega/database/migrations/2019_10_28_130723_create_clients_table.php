@@ -23,8 +23,8 @@ class CreateClientsTable extends Migration
             $table->string('gender');
             $table->unsignedSmallInteger('age');
            
-            $table->usignedBigInteger('created_by');
-            $table->usignedBigInteger('update_by');
+            $table->unsignedBigInteger('created_by');
+            $table->unsignedBigInteger('update_by');
 
             $table->timestamps();
         });

@@ -24,8 +24,8 @@ class CreateStocksTable extends Migration
             $table->unsignedBigInteger('supplier_id');
             $table->foreign('supplier_id')->references('id')->on('suppliers');
 
-            $table->usignedBigInteger('created_by');
-            $table->usignedBigInteger('update_by');
+            $table->unsignedBigInteger('created_by');
+            $table->unsignedBigInteger('update_by');
 
             $table->timestamps();
         });

@@ -15,6 +15,15 @@ class CreateCreditedPayTable extends Migration
     {
         Schema::create('credited_pay', function (Blueprint $table) {
             $table->bigIncrements('id');
+
+            $table->string('credited');
+
+            $table->unsignedBigInteger('purshase_id');
+            $table->foreign('purshase_id')->references('id')->on('purshases');
+
+            $table->unsignedBigInteger('created_by');
+            $table->unsignedBigInteger('update_by');
+
             $table->timestamps();
         });
     }

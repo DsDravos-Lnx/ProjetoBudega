@@ -26,8 +26,8 @@ class CreateProductsTable extends Migration
 
             $table->foreign('stock_id')->references('id')->on('stocks');
             
-            $table->usignedBigInteger('created_by');
-            $table->usignedBigInteger('update_by');
+            $table->unsignedBigInteger('created_by');
+            $table->unsignedBigInteger('update_by');
 
             $table->timestamps();
         });
