@@ -42,4 +42,12 @@ Route::namespace ('Api')->name('api.')->group(function () {
 		Route::put('/{id}', 'ProductController@update')->name('update_products');
 		Route::delete('/{id}', 'ProductController@delete')->name('delete_products');
 	});
+
+	Route::prefix('purshase')->group(function () {
+		Route::get('/', 'PurshaseController@index')->name('index_purshases');
+		Route::get('/{id}', 'PurshaseController@show')->name('single_purshases');
+		Route::post('/', 'PurshaseController@store')->name('store_purshases');
+		Route::put('/{id}', 'PurshaseController@update')->name('update_purshases');
+		Route::delete('/{id}', 'PurshaseController@delete')->name('delete_purshases');
+	});
 });
