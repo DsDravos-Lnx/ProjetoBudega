@@ -19,14 +19,14 @@ class ClientController extends Controller
         return response()->json($this->client->paginate(10));
     }
 
-    public function show(Admin $id){
+    public function show(Client $id){
         $data = ['data' => $id];
         return response()->json($data);
     }
     
     public function store(Request $request){
         try {
-            $adminData = $request->all();
+            $clientData = $request->all();
             $this->client->create($clientData);
             $return = ['data' => ['msg' => 'Client successful registed']];
             return response()->json($return, 201);

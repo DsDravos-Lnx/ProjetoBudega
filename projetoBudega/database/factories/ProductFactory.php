@@ -10,7 +10,7 @@ $factory->define(Model::class, function (Faker $faker) {
 		'name' => $faker->name,
 		'description' => 'Product description here.',
 		'image' => 'photo here',
-		'price' => 1000.00,
+		'price' => 99.99,
 		'available' => true,
 	];
 });

@@ -18,14 +18,14 @@ class PurshaseController extends Controller {
 		return response()->json($this->purshase->paginate(10));
 	}
 
-	public function show(Admin $id) {
+	public function show(Purshase $id) {
 		$data = ['data' => $id];
 		return response()->json($data);
 	}
 
 	public function store(Request $request) {
 		try {
-			$adminData = $request->all();
+			$purshaseData = $request->all();
 			$this->purshase->create($purshaseData);
 			$return = ['data' => ['msg' => 'Purshase successful registed']];
 			return response()->json($return, 201);

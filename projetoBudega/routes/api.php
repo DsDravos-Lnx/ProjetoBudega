@@ -43,11 +43,28 @@ Route::namespace ('Api')->name('api.')->group(function () {
 		Route::delete('/{id}', 'ProductController@delete')->name('delete_products');
 	});
 
-	Route::prefix('purshase')->group(function () {
+	Route::prefix('purshases')->group(function () {
 		Route::get('/', 'PurshaseController@index')->name('index_purshases');
 		Route::get('/{id}', 'PurshaseController@show')->name('single_purshases');
 		Route::post('/', 'PurshaseController@store')->name('store_purshases');
 		Route::put('/{id}', 'PurshaseController@update')->name('update_purshases');
 		Route::delete('/{id}', 'PurshaseController@delete')->name('delete_purshases');
 	});
+
+	Route::prefix('stocks')->group(function () {
+		Route::get('/', 'StockController@index')->name('index_stocks');
+		Route::get('/{id}', 'StockController@show')->name('single_stocks');
+		Route::post('/', 'StockController@store')->name('store_stocks');
+		Route::put('/{id}', 'StockController@update')->name('update_stocks');
+		Route::delete('/{id}', 'StockController@delete')->name('delete_stocks');
+	});
+
+	Route::prefix('crediteds')->group(function () {
+		Route::get('/', 'CreditedPayController@index')->name('index_crediteds');
+		Route::get('/{id}', 'CreditedPayController@show')->name('single_crediteds');
+		Route::post('/', 'CreditedPayController@store')->name('store_crediteds');
+		Route::put('/{id}', 'CreditedPayController@update')->name('update_crediteds');
+		Route::delete('/{id}', 'CreditedPayController@delete')->name('delete_crediteds');
+	});
+
 });
