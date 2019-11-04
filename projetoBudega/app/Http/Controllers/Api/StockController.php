@@ -55,7 +55,7 @@ class StockController extends Controller
 	public function delete(Stock $id) {
 		try {
 			$id->delete();
-			return response()->json(['data' => ['msg' => 'Stock name:' . $id->name . 'successfully deleted']]);
+			return response()->json(['data' => ['msg' => 'Stock cod:' . $id->id . 'successfully deleted']]);
 		} catch (\Exception $e) {
 			if (config('app.debug')) {
 				return response()->json(ApiError::erorMessage($e->getMessage(), 1003));

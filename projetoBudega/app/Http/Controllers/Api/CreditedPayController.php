@@ -57,7 +57,7 @@ class CreditedPayController extends Controller
     public function delete(CreditedPay $id){
         try{
             $id->delete();
-            return response()->json(['data' => ['msg' => 'Credited pay name:' . $id->name . 'successfully deleted']]);
+            return response()->json(['data' => ['msg' => 'Credited pay id:' . $id->id . 'successfully deleted']]);
         }catch(\Exception $e){
             if(config('app.debug')){
                 return response()->json(ApiError::errorMessage($e->getMessage(), 1003));

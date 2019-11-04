@@ -56,7 +56,7 @@ class PurshaseController extends Controller {
 	public function delete(Purshase $id) {
 		try {
 			$id->delete();
-			return response()->json(['data' => ['msg' => 'Purshase name:' . $id->name . 'successfully deleted']]);
+			return response()->json(['data' => ['msg' => 'Purshase cod:' . $id->id . 'successfully deleted']]);
 		} catch (\Exception $e) {
 			if (config('app.debug')) {
 				return response()->json(ApiError::erorMessage($e->getMessage(), 1003));
