@@ -67,4 +67,12 @@ Route::namespace ('Api')->name('api.')->group(function () {
 		Route::delete('/{id}', 'CreditedPayController@delete')->name('delete_crediteds');
 	});
 
+	Route::prefix('Suppliers')->group(function () {
+		Route::get('/', 'SupplierController@index')->name('index_Suppliers');
+		Route::get('/{id}', 'SupplierController@show')->name('single_Suppliers');
+		Route::post('/', 'SupplierController@store')->name('store_Suppliers');
+		Route::put('/{id}', 'SupplierController@update')->name('update_Suppliers');
+		Route::delete('/{id}', 'SupplierController@delete')->name('delete_Suppliers');
+	});
+
 });

@@ -2,18 +2,16 @@
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
 
-use App\Model;
-use Faker\Generator as Faker;
 use App\Client;
+use Faker\Generator as Faker;
 
 $factory->define(Client::class, function (Faker $faker) {
-    return [
-        'name' => $faker->name,
-        'cpf' => '999.999.999-99',
-        'contact' => $faker->phoneNumber,
-        'address' => $faker->name,
-        'gender' => 'male',
-        
-        
-    ];
+	return [
+		'name' => $faker->name,
+		'cpf' => $faker->cpf,
+		'contact' => $faker->phoneNumber,
+		'address' => $faker->name,
+		'gender' => 'male',
+
+	];
 });
