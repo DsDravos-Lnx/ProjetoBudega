@@ -7,8 +7,8 @@ use Faker\Generator as Faker;
 
 $factory->define(Model::class, function (Faker $faker) {
 	return [
-		'amount' => 'very',
-		'price' => 10.50,
-		'credited' => true,
+		'amount' => $faker->randomDigit,
+		'price' => $faker->randomDigit,
+		'credited' => $faker->boolean,
 	];
 });

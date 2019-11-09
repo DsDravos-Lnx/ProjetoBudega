@@ -8,8 +8,8 @@ use Faker\Generator as Faker;
 $factory->define(Model::class, function (Faker $faker) {
 	return [
 		'name' => $faker->name,
-		'cnpj' => $faker->cpf,
-		'address' => 'Street x xxx',
+		'cnpj' => $faker->unique()->cpf,
+		'address' => $faker->address,
 		'contact' => $faker->cellphonenumber,
 	];
 });

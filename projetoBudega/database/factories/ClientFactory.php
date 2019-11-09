@@ -8,10 +8,10 @@ use Faker\Generator as Faker;
 $factory->define(Client::class, function (Faker $faker) {
 	return [
 		'name' => $faker->name,
-		'cpf' => $faker->cpf,
+		'cpf' => $faker->cpf, # Tem que botar ‘pt_BR’ no método create()
 		'contact' => $faker->phoneNumber,
-		'address' => $faker->name,
-		'gender' => 'male',
+		'address' => $faker->address,
+		'gender' => 'male', # Pode ser um boolean
 
 	];
 });
