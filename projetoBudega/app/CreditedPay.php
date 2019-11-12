@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class CreditedPay extends Model
 {
     protected $fillable = [
-        'credited', 'purshase_id', 'created_by', 'update_by',
+        'credited', 'purshase_id',
       ];
 
       protected $table = 'credited_pays';

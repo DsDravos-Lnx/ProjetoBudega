@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Stock extends Model
 {
     protected $fillable = [
-        'amount', 'type', 'product_id', 'supplier_id', 'created_by', 'update_by',
+        'amount', 'type', 'product_id', 'supplier_id', 
     ];
 
     protected $table = 'stocks';
