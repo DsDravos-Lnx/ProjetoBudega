@@ -13,16 +13,16 @@ class CreateCreditedPayTable extends Migration
      */
     public function up()
     {
-        Schema::create('credited_pay', function (Blueprint $table) {
+        Schema::create('credited_pays', function (Blueprint $table) {
             $table->bigIncrements('id');
 
             $table->string('credited');
 
-            $table->unsignedBigInteger('purshase_id');
+            $table->unsignedBigInteger('purshase_id')->nullable();
             $table->foreign('purshase_id')->references('id')->on('purshases');
 
-            $table->unsignedBigInteger('created_by');
-            $table->unsignedBigInteger('update_by');
+            $table->unsignedBigInteger('created_by')->nullable();
+            $table->unsignedBigInteger('update_by')->nullable();
 
             $table->timestamps();
         });
@@ -35,6 +35,6 @@ class CreateCreditedPayTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('credited_pay');
+        Schema::dropIfExists('credited_pays');
     }
 }

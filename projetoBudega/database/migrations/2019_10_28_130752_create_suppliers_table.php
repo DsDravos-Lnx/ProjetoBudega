@@ -21,8 +21,8 @@ class CreateSuppliersTable extends Migration
             $table->string('address');
             $table->string('contact');
             
-            $table->unsignedBigInteger('created_by');
-            $table->unsignedBigInteger('update_by');
+            $table->unsignedBigInteger('created_by')->nullable();
+            $table->unsignedBigInteger('update_by')->nullable();
 
             $table->timestamps();
         });

@@ -2,12 +2,14 @@
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
 
-use App\Model;
+use App\Stock;
 use Faker\Generator as Faker;
 
-$factory->define(Model::class, function (Faker $faker) {
+$factory->define(Stock::class, function (Faker $faker) {
 	return [
 		'amount' => $faker->randomDigit,
-		'type' => $faker->productName,
+		'type' => $faker->name,
+		'created_by' => $faker->name,
+		'update_by' => $faker->name,
 	];
 });

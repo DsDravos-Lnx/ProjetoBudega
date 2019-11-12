@@ -3,7 +3,7 @@
 use App\Purshase;
 use Illuminate\Database\Seeder;
 
-class PurshaseTableSeeder extends Seeder {
+class PurshasesTableSeeder extends Seeder {
 	/**
 	 * Run the database seeds.
 	 *

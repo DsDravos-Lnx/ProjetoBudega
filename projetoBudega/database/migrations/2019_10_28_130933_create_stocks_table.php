@@ -14,16 +14,16 @@ class CreateStocksTable extends Migration {
 		Schema::create('stocks', function (Blueprint $table) {
 			$table->bigIncrements('id');
 
-			$table->int('amount');
+			$table->integer('amount');
 			$table->string('type');
 
-			$table->unsignedBigInteger('product_id');
+			$table->unsignedBigInteger('product_id')->nullable();
 			$table->foreign('product_id')->references('id')->on('products');
-			$table->unsignedBigInteger('supplier_id');
+			$table->unsignedBigInteger('supplier_id')->nullable();
 			$table->foreign('supplier_id')->references('id')->on('suppliers');
 
-			$table->unsignedBigInteger('created_by');
-			$table->unsignedBigInteger('update_by');
+			$table->unsignedBigInteger('created_by')->nullable();
+            $table->unsignedBigInteger('update_by')->nullable();
 
 			$table->timestamps();
 		});

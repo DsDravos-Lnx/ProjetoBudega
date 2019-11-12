@@ -11,5 +11,7 @@ $factory->define(Admin::class, function (Faker $faker) {
 		'email' => $faker->unique()->safeEmail,
 		'login' => $faker->unique()->userName,
 		'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi',
+		'created_by' => $faker->name,
+		'update_by' => $faker->name,
 	];
 });

@@ -14,17 +14,17 @@ class CreatePurshasesTable extends Migration {
 		Schema::create('purshases', function (Blueprint $table) {
 			$table->bigIncrements('id');
 
-			$table->int('amount');
+			$table->integer('amount');
 			$table->float('price', 8, 2);
 			$table->boolean('credited');
 
-			$table->unsignedBigInteger('client_id');
-			$table->unsignedBigInteger('product_id');
+			$table->unsignedBigInteger('client_id')->nullable();
+			$table->unsignedBigInteger('product_id')->nullable();
 			$table->foreign('product_id')->references('id')->on('products');
 			$table->foreign('client_id')->references('id')->on('clients');
 
-			$table->unsignedBigInteger('created_by');
-			$table->unsignedBigInteger('update_by');
+			$table->unsignedBigInteger('created_by')->nullable();
+            $table->unsignedBigInteger('update_by')->nullable();
 
 			$table->timestamps();
 		});
