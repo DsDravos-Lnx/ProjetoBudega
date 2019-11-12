@@ -19,7 +19,7 @@ class CreateCreditedPayTable extends Migration
             $table->string('credited');
 
             $table->unsignedBigInteger('purshase_id')->nullable();
-            $table->foreign('purshase_id')->references('id')->on('purshases');
+            $table->foreign('purshase_id')->references('id')->on('purshases')->onDelete('cascade');
 
             $table->unsignedBigInteger('created_by')->nullable();
             $table->unsignedBigInteger('update_by')->nullable();

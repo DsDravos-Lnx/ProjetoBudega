@@ -18,9 +18,10 @@ class CreateStocksTable extends Migration {
 			$table->string('type');
 
 			$table->unsignedBigInteger('product_id')->nullable();
-			$table->foreign('product_id')->references('id')->on('products');
 			$table->unsignedBigInteger('supplier_id')->nullable();
-			$table->foreign('supplier_id')->references('id')->on('suppliers');
+			
+			$table->foreign('product_id')->references('id')->on('products')->onDelete('cascade');
+			$table->foreign('supplier_id')->references('id')->on('suppliers')->onDelete('cascade');
 
 			$table->unsignedBigInteger('created_by')->nullable();
             $table->unsignedBigInteger('update_by')->nullable();

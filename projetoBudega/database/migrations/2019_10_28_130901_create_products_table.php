@@ -24,7 +24,7 @@ class CreateProductsTable extends Migration
 
             $table->unsignedBigInteger('stock_id')->nullable();
 
-            $table->foreign('stock_id')->references('id')->on('stocks');
+            $table->foreign('stock_id')->references('id')->on('stocks')->onDelete('cascade');
             
             $table->unsignedBigInteger('created_by')->nullable();
             $table->unsignedBigInteger('update_by')->nullable();

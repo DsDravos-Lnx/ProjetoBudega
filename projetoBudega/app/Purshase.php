@@ -10,7 +10,10 @@ class Purshase extends Model
         'amount', 'price', 'credited', 'created_by', 'update_by',
     ];
 
+    protected $table = 'purshases';
+
     public function debtors() {
         return Purshase::all()->where('credited', '=', 1);
     }
+
 }

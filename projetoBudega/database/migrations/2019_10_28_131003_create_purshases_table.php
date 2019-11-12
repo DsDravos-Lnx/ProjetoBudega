@@ -20,8 +20,8 @@ class CreatePurshasesTable extends Migration {
 
 			$table->unsignedBigInteger('client_id')->nullable();
 			$table->unsignedBigInteger('product_id')->nullable();
-			$table->foreign('product_id')->references('id')->on('products');
-			$table->foreign('client_id')->references('id')->on('clients');
+			$table->foreign('product_id')->references('id')->on('products')->onDelete('cascade');
+			$table->foreign('client_id')->references('id')->on('clients')->onDelete('cascade');
 
 			$table->unsignedBigInteger('created_by')->nullable();
             $table->unsignedBigInteger('update_by')->nullable();

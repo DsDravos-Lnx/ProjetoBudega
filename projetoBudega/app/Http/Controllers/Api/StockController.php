@@ -64,5 +64,9 @@ class StockController extends Controller
 		}
 	}
 
+	public function listProducts(){
+		return response()->json($this->stock->products());
+	}
+
 }
 
