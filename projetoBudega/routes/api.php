@@ -18,6 +18,14 @@ use Illuminate\Http\Request;
 // });
 
 Route::namespace ('Api')->name('api.')->group(function () {
+	
+	Route::prefix('users')->group(function () {
+		Route::post('/register', 'UserController@register')->name('register_user');
+		Route::post('/login', 'UserController@login')->name('login_user');
+		Route::group(['middleware' => 'auth:api'], function(){
+			Route::post('/details', 'UserController@details')->name('details_user');
+		});
+	});
 
 	Route::prefix('admins')->group(function () {
 		Route::get('/', 'AdminController@index')->name('index_admins');

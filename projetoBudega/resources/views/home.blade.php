@@ -4,7 +4,7 @@
 	<title></title>
 </head>
 <body>
-	<form action="{{ url('store_admins') }}" method="POST">
+	<form action="{{ route('api.store_admins') }}" method="POST">
         
         <input type="text" name="name" placeholder="Nome">
 		<input type="text" name="email" placeholder="Email">

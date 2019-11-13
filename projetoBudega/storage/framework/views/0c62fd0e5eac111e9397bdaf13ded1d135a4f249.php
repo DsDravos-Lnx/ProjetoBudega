@@ -4,7 +4,7 @@
 	<title></title>
 </head>
 <body>
-	<form action="<?php echo e(url('api/admins/create')); ?>" method="POST">
+	<form action="<?php echo e(route('api.store_admins')); ?>" method="POST">
         
         <input type="text" name="name" placeholder="Nome">
 		<input type="text" name="email" placeholder="Email">
