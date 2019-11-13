@@ -27,6 +27,10 @@ class PurshaseController extends Controller {
 		return response()->json($this->purshase->debtors());
 	}
 
+	public function showWithoutPay(int $id) {
+		return response()->json($this->purshase->withoutPay($id));
+	}
+
 	public function store(Request $request) {
 		try {
 			$purshaseData = $request->all();

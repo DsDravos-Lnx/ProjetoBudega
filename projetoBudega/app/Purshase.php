@@ -15,6 +15,10 @@ class Purshase extends Model {
 		return Purshase::all()->where('credited', '=', 1);
 	}
 
+	public function withoutPay($id) {
+		return Purshase::all()->where('credited', '=', 0)->where('client_id', '=', $id);
+	}
+
 	public function products() {
 		return $this->hasMany(Product::class, 'product_id');
 	}

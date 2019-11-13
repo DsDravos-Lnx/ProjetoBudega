@@ -1,7 +1,5 @@
 <?php
 
-use Illuminate\Http\Request;
-
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -18,11 +16,11 @@ use Illuminate\Http\Request;
 // });
 
 Route::namespace ('Api')->name('api.')->group(function () {
-	
+
 	Route::prefix('users')->group(function () {
 		Route::post('/register', 'UserController@register')->name('register_user');
 		Route::post('/login', 'UserController@login')->name('login_user');
-		Route::group(['middleware' => 'auth:api'], function(){
+		Route::group(['middleware' => 'auth:api'], function () {
 			Route::post('/details', 'UserController@details')->name('details_user');
 		});
 	});
@@ -53,12 +51,13 @@ Route::namespace ('Api')->name('api.')->group(function () {
 
 	Route::prefix('purshases')->group(function () {
 		Route::get('/', 'PurshaseController@index')->name('index_purshases');
-		Route::get('/show/{id}', 'PurshaseController@show')->name('single_purshases');	
+		Route::get('/show/{id}', 'PurshaseController@show')->name('single_purshases');
 		Route::get('/debtors', 'PurshaseController@showDebtors')->name('showDebtors_purshases');
+		Route::get('/withoutPay/{id}', 'PurshaseController@showWithoutPay')->name('showWithoutPay_purshases');
 		Route::post('/create', 'PurshaseController@store')->name('store_purshases');
 		Route::put('/edit/{id}', 'PurshaseController@update')->name('update_purshases');
 		Route::delete('/delete/{id}', 'PurshaseController@delete')->name('delete_purshases');
-		
+
 	});
 
 	Route::prefix('stocks')->group(function () {
