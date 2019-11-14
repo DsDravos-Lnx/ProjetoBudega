@@ -4,15 +4,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <title>Dashboard</title>
-    <style type="text/css" media="screen">
-      .card.bg-dark {margin: 15px 0px;}
-    </style>
+    <title>Dívidas</title>
   </head>
   <body style="background: rgb(230,230,230);">
-
-<!--- FIm dos models-->
-
     <div class="flex-wrap">
       <nav class="navbar navbar-expand-lg navbar-light bg-dark text-white">
         <a class="navbar-brand text-white" href="dashboard.html">QBudega</a>
@@ -34,58 +28,25 @@
           </ul>
         </div>
       </nav>
-      <!-- Cards com os botões -->
-      <div class="row m-auto text-white pt-2">
-        <div class="col-lg-4">
-          <div class="card bg-dark">
-            <div class="card-body">
-              <h5 class="card-title">Compras</h5>
-              <p class="card-text"></p>
-              <a href="compras.html" class="btn btn-secondary">Ver mais</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-4">
-          <div class="card bg-dark">
-            <div class="card-body">
-              <h5 class="card-title">Produtos</h5>
-              <p class="card-text"></p>
-              <a href="produtos.html" class="btn btn-secondary">Ver mais</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-4">
-          <div class="card bg-dark">
-            <div class="card-body">
-              <h5 class="card-title">Dívidas</h5>
-              <p class="card-text"></p>
-              <a href="dividas.html" class="btn btn-secondary">Ver mais</a>
-            </div>
-          </div>
-        </div>
-        
-        <div class="col-lg-4">
-          <div class="card bg-dark">
-            <div class="card-body">
-              <h5 class="card-title">Fornecedores</h5>
-              <p class="card-text"></p>
-              <a href="fornecedores.html" class="btn btn-secondary">Ver mais</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-4">
-          <div class="card bg-dark">
-            <div class="card-body">
-              <h5 class="card-title">Clientes</h5>
-              <p class="card-text"></p>
-              <a href="clientes.html" class="btn btn-secondary">Ver mais</a>
-            </div>
-          </div>
-        </div>
-      </div>
+      <h3 class="p-3">Dívidas</h3>
+      <table class="table m-auto" style="width: 90%;"> 
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col" class="w-25">Cliente</th>
+            <th scope="col" class="w-75">Detalhes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">MCH_AGG</th>
+            <td>
+              Total:<br/>
+              Data:<br/>
+              <a href="#model" class="btn btn-secondary float-right">Ver mais</a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
