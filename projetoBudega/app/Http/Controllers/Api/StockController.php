@@ -2,13 +2,15 @@
 
 namespace App\Http\Controllers\Api;
 
-use Illuminate\Http\Request;
-use App\Stock;
-use App\Http\Controllers\Controller;
 use App\Api\ApiError;
+use App\Http\Controllers\Controller;
+use App\Stock;
+use Illuminate\Http\Request;
 
-class StockController extends Controller
-{
+class StockController extends Controller {
+
+	#private $stock;
+
 	public function __construct(Stock $stock) {
 		$this->stock = $stock;
 	}
@@ -64,9 +66,16 @@ class StockController extends Controller
 		}
 	}
 
-	public function listProducts(){
-		return response()->json($this->stock->products());
+	public function showFromEachSupplier(int $id) {
+		return response()->json($this->stock->fromEachSupplier($id));
+	}
+
+	public function showProductsInStock() {
+		return response()->json($this->stock->productsInStock());
+	}
+
+	public function showProductsWithoutStock() {
+		return response()->json($this->stock->productsWithoutStock());
 	}
 
 }
-

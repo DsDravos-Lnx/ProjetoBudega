@@ -14,4 +14,8 @@ class Supplier extends Model {
 	public function stocks() {
 		return $this->hasMany(Stock::class, 'stock_id');
 	}
+
+	public function searchByNames($name) {
+		return Supplier::all()->where('name', 'like', $name);
+	}
 }
