@@ -18,4 +18,8 @@ class Product extends Model {
 	public function purshases() {
 		return $this->belongsTo(Purshase::class, 'purshase_id');
 	}
+
+	public function productsAvailables() {
+		return Product::all()->where('available', '=', 1);
+	}
 }

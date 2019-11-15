@@ -15,4 +15,8 @@ class Client extends Model {
 		return $this->hasMany(Purshase::class, 'purshase_id');
 	}
 
+	public function searchByNames($name) {
+		return Client::all()->where('name', 'like', $name);
+	}
+
 }

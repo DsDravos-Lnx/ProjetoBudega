@@ -18,4 +18,16 @@ class Stock extends Model {
 	public function suppliers() {
 		return $this->belongsTo(Supplier::class, 'supplier_id');
 	}
+
+	public function fromEachSupplier($id) {
+		return Stock::all()->where('supplier_id', '=', $id);
+	}
+
+	public function productsInStock() {
+		return Stock::all()->where('amount', '>', 0);
+	}
+
+	public function productsWithoutStock() {
+		return Stock::all()->where('amount', '=', 0);
+	}
 }

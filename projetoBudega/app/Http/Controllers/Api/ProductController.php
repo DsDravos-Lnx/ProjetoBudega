@@ -65,4 +65,8 @@ class ProductController extends Controller {
 		}
 	}
 
+	public function toListProductsAvailables() {
+		return response()->json($this->product->productsAvailables());
+	}
+
 }

@@ -36,6 +36,7 @@ Route::namespace ('Api')->name('api.')->group(function () {
 	Route::prefix('clients')->group(function () {
 		Route::get('/', 'ClientController@index')->name('index_clients');
 		Route::get('/show/{id}', 'ClientController@show')->name('single_clients');
+		Route::get('/searchByNames/{name}', 'ClientController@showSearchByNames')->name('showSearchByNames_clients');
 		Route::post('/create', 'ClientController@store')->name('store_clients');
 		Route::put('/edit/{id}', 'ClientController@update')->name('update_clients');
 		Route::delete('/delete/{id}', 'ClientController@delete')->name('delete_clients');
@@ -45,6 +46,7 @@ Route::namespace ('Api')->name('api.')->group(function () {
 		Route::get('/', 'ProductController@index')->name('index_products');
 		Route::get('/show/{id}', 'ProductController@show')->name('single_products');
 		Route::post('/create', 'ProductController@store')->name('store_products');
+		Route::get('/productsAvailables', 'ProductController@toListProductsAvailables')->name('toListProductsAvailables_products');
 		Route::put('/edit/{id}', 'ProductController@update')->name('update_products');
 		Route::delete('/delete/{id}', 'ProductController@delete')->name('delete_products');
 	});
@@ -53,7 +55,9 @@ Route::namespace ('Api')->name('api.')->group(function () {
 		Route::get('/', 'PurshaseController@index')->name('index_purshases');
 		Route::get('/show/{id}', 'PurshaseController@show')->name('single_purshases');
 		Route::get('/debtors', 'PurshaseController@showDebtors')->name('showDebtors_purshases');
+		Route::get('/allWithoutPay', 'PurshaseController@showAllWithoutPay')->name('showAllWithoutPay_purshases');
 		Route::get('/withoutPay/{id}', 'PurshaseController@showWithoutPay')->name('showWithoutPay_purshases');
+		Route::get('/searchPurshases/{id}', 'PurshaseController@showSearchPurshases')->name('showSearchPurshases_purshases');
 		Route::post('/create', 'PurshaseController@store')->name('store_purshases');
 		Route::put('/edit/{id}', 'PurshaseController@update')->name('update_purshases');
 		Route::delete('/delete/{id}', 'PurshaseController@delete')->name('delete_purshases');
@@ -63,6 +67,9 @@ Route::namespace ('Api')->name('api.')->group(function () {
 	Route::prefix('stocks')->group(function () {
 		Route::get('/', 'StockController@index')->name('index_stocks');
 		Route::get('/show/{id}', 'StockController@show')->name('single_stocks');
+		Route::get('/fromEachSupplier/{id}', 'StockController@showFromEachSupplier')->name('showFromEachSupplier_stocks');
+		Route::get('/productsInStock', 'StockController@showProductsInStock')->name('showProductsInStock_stocks');
+		Route::get('/productsWithoutStock', 'StockController@showProductsWithoutStock')->name('showProductsWithoutStock_stocks');
 		Route::post('/create', 'StockController@store')->name('store_stocks');
 		Route::put('/edit/{id}', 'StockController@update')->name('update_stocks');
 		Route::delete('/delete/{id}', 'StockController@delete')->name('delete_stocks');
@@ -76,9 +83,10 @@ Route::namespace ('Api')->name('api.')->group(function () {
 		Route::delete('/delete/{id}', 'CreditedPayController@delete')->name('delete_crediteds');
 	});
 
-	Route::prefix('Suppliers')->group(function () {
+	Route::prefix('suppliers')->group(function () {
 		Route::get('/', 'SupplierController@index')->name('index_Suppliers');
 		Route::get('/show/{id}', 'SupplierController@show')->name('single_Suppliers');
+		Route::get('/searchByNames/{name}', 'SupplierController@showSearchByNames')->name('showSearchByNames_Suppliers');
 		Route::post('/create', 'SupplierController@store')->name('store_Suppliers');
 		Route::put('/edit/{id}', 'SupplierController@update')->name('update_Suppliers');
 		Route::delete('/delete/{id}', 'SupplierController@delete')->name('delete_Suppliers');

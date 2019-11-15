@@ -23,14 +23,6 @@ class PurshaseController extends Controller {
 		return response()->json($data);
 	}
 
-	public function showDebtors() {
-		return response()->json($this->purshase->debtors());
-	}
-
-	public function showWithoutPay(int $id) {
-		return response()->json($this->purshase->withoutPay($id));
-	}
-
 	public function store(Request $request) {
 		try {
 			$purshaseData = $request->all();
@@ -71,6 +63,18 @@ class PurshaseController extends Controller {
 			}
 			return response()->json(ApiError::errorMessage('Erros deleting purshase', 1003));
 		}
+	}
+
+	public function showDebtors() {
+		return response()->json($this->purshase->debtors());
+	}
+
+	public function showWithoutPay(int $id) {
+		return response()->json($this->purshase->withoutPay($id));
+	}
+
+	public function showAllWithoutPay() {
+		return response()->json($this->purshase->allWithoutPay());
 	}
 
 }
