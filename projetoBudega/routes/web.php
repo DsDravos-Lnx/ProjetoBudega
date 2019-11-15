@@ -21,7 +21,7 @@ Route::get('/test', function () {
 
 Route::get('/login', function(){
     return view('login');
-});
+})->name('login');
 
 Route::get('/products', function(){
     return view('products');
@@ -39,9 +39,11 @@ Route::get('/debtors', function(){
     return view('debtors');
 });
 
-Route::get('/home', function(){
-    return view('home');
-})->name('home');
+Route::middleware(['auth:api'])->group( function () {
+    Route::get('/home', function(){
+        return view('home');
+    })->name('home');        
+});
 
 Route::get('/register_user', function(){
     return view('userRegister');
