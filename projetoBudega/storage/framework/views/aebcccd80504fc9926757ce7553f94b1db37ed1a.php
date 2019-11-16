@@ -171,7 +171,7 @@
       <div class="modal fade" id="addClient" tabindex="-1" role="dialog" aria-labelledby="addClientLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
           <div class="modal-content">
-            <form action="" method="POST">
+            <form action="<?php echo e(route('api.store_clients')); ?>" method="POST">
               <div class="modal-header">
                 <h5 class="modal-title" id="addClientLabel">Adicionar cliente</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -185,8 +185,8 @@
                 <input type="text" name="cpf" class="form-control" required>
                 <label for="contact" class="col-form-label">Contato:</label>
                 <input type="text" name="contact" class="form-control" required>
-                <label for="adress" class="col-form-label">Endereço:</label>
-                <input type="text" name="adress" class="form-control" required>
+                <label for="address" class="col-form-label">Endereço:</label>
+                <input type="text" name="address" class="form-control" required>
                 <label for="age" class="col-form-label">Idade:</label>
                 <input type="text" name="age" class="form-control" required>
                 <label class="col-form-label">Sexo:</label>
@@ -206,7 +206,7 @@
       <div class="modal fade" id="addProduct" tabindex="-1" role="dialog" aria-labelledby="addProductLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
           <div class="modal-content">
-            <form action="" method="POST">
+            <form action="<?php echo e(route('api.store_products')); ?>" method="POST">
               <div class="modal-header">
                 <h5 class="modal-title" id="addProductLabel">Adicionar produto</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -244,7 +244,8 @@
       <div class="modal fade" id="addSupplier" tabindex="-1" role="dialog" aria-labelledby="addSupplierLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
           <div class="modal-content">
-            <form action="" method="POST">
+
+            <form action="<?php echo e(route('api.store_suppliers')); ?>" method="POST">
               <div class="modal-header">
                 <h5 class="modal-title" id="addSupplierLabel">Adicionar fornecedor</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -258,14 +259,15 @@
                 <input type="text" name="cnpj" class="form-control">
                 <label for="contact" class="col-form-label">Contato:</label>
                 <input type="text" name="contact" class="form-control" required>
-                <label for="adress" class="col-form-label">Endereço:</label>
-                <input type="text" name="adress" class="form-control" required>
+                <label for="address" class="col-form-label">Endereço:</label>
+                <input type="text" name="address" class="form-control" required>
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
                 <button type="submit" class="btn btn-primary">Cadastrar</button>
               </div>
             </form>
+
           </div>
         </div>
       </div>

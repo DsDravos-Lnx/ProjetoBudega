@@ -1,3 +1,13 @@
+<?php
+  $url = "http://localhost:8002/api/suppliers/";
+  $suppliers = file_get_contents($url);
+  echo "<pre>";
+  print_r($suppliers);
+  
+  exit;
+
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
   <head>
@@ -43,6 +53,7 @@
               Contato:<br/>
               Endereço:<br/>
               CPF:<br/>
+              <?php echo $suppliers ?></br> 
               <a href="#model" class="btn btn-secondary float-right">Ver mais</a
             </td>
           </tr>

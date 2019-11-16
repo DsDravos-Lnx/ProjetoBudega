@@ -84,12 +84,12 @@ Route::namespace ('Api')->name('api.')->group(function () {
 	});
 
 	Route::prefix('suppliers')->group(function () {
-		Route::get('/', 'SupplierController@index')->name('index_Suppliers');
-		Route::get('/show/{id}', 'SupplierController@show')->name('single_Suppliers');
+		Route::get('/', 'SupplierController@index')->name('index_suppliers');
+		Route::get('/show/{id}', 'SupplierController@show')->name('single_suppliers');
 		Route::get('/searchByNames/{name}', 'SupplierController@showSearchByNames')->name('showSearchByNames_Suppliers');
-		Route::post('/create', 'SupplierController@store')->name('store_Suppliers');
-		Route::put('/edit/{id}', 'SupplierController@update')->name('update_Suppliers');
-		Route::delete('/delete/{id}', 'SupplierController@delete')->name('delete_Suppliers');
+		Route::post('/create', 'SupplierController@store')->name('store_suppliers');
+		Route::put('/edit/{id}', 'SupplierController@update')->name('update_suppliers');
+		Route::delete('/delete/{id}', 'SupplierController@delete')->name('delete_suppliers');
 	});
 
 });

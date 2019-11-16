@@ -15,26 +15,31 @@ Route::get('/test', function () {
 	return view('teste');
 });
 
-Route::get('/products', function(){
-    return view('products');
+
+Route::group(['middleware' => 'auth'], function () {
+    Route::get('/products', function(){
+        return view('products');
+    });
+    
+    Route::get('/clients', function(){
+        return view('clients');
+    })->name('clients');
+    
+    Route::get('/suppliers', function(){
+        return view('suppliers');
+    });
+    
+    Route::get('/debtors', function(){
+        return view('debtors');
+    });
 });
 
-Route::get('/clients', function(){
-    return view('clients');
-})->name('clients');
-
-Route::get('/suppliers', function(){
-    return view('suppliers');
-});
-
-Route::get('/debtors', function(){
-    return view('debtors');
-});
 
 
 Route::get('/register_user', function(){
     return view('userRegister');
 })->name('userRegister');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
