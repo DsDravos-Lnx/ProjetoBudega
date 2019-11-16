@@ -1,0 +1,20 @@
+[2019-11-15 23:43:29] local.ERROR: include(/var/www/html/ProjetoBudega/projetoBudega/vendor/composer/../laravel/framework/src/Illuminate/Container/Util.php): failed to open stream: No such file or directory {"exception":"[object] (ErrorException(code: 0): include(/var/www/html/ProjetoBudega/projetoBudega/vendor/composer/../laravel/framework/src/Illuminate/Container/Util.php): failed to open stream: No such file or directory at /var/www/html/ProjetoBudega/projetoBudega/vendor/composer/ClassLoader.php:444)
+[stacktrace]
+#0 /var/www/html/ProjetoBudega/projetoBudega/vendor/composer/ClassLoader.php(444): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleError(2, 'include(/var/ww...', '/var/www/html/P...', 444, Array)
+#1 /var/www/html/ProjetoBudega/projetoBudega/vendor/composer/ClassLoader.php(444): include()
+#2 /var/www/html/ProjetoBudega/projetoBudega/vendor/composer/ClassLoader.php(322): Composer\\Autoload\\includeFile('/var/www/html/P...')
+#3 [internal function]: Composer\\Autoload\\ClassLoader->loadClass('Illuminate\\\\Cont...')
+#4 /var/www/html/ProjetoBudega/projetoBudega/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(90): spl_autoload_call('Illuminate\\\\Cont...')
+#5 /var/www/html/ProjetoBudega/projetoBudega/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(34): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Illuminate\\Foundation\\Application), Array, Object(Closure))
+#6 /var/www/html/ProjetoBudega/projetoBudega/vendor/laravel/framework/src/Illuminate/Container/Container.php(590): Illuminate\\Container\\BoundMethod::call(Object(Illuminate\\Foundation\\Application), Array, Array, NULL)
+#7 /var/www/html/ProjetoBudega/projetoBudega/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(828): Illuminate\\Container\\Container->call(Array)
+#8 /var/www/html/ProjetoBudega/projetoBudega/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(811): Illuminate\\Foundation\\Application->bootProvider(Object(Illuminate\\Database\\DatabaseServiceProvider))
+#9 [internal function]: Illuminate\\Foundation\\Application->Illuminate\\Foundation\\{closure}(Object(Illuminate\\Database\\DatabaseServiceProvider), 5)
+#10 /var/www/html/ProjetoBudega/projetoBudega/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(812): array_walk(Array, Object(Closure))
+#11 /var/www/html/ProjetoBudega/projetoBudega/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/BootProviders.php(17): Illuminate\\Foundation\\Application->boot()
+#12 /var/www/html/ProjetoBudega/projetoBudega/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(211): Illuminate\\Foundation\\Bootstrap\\BootProviders->bootstrap(Object(Illuminate\\Foundation\\Application))
+#13 /var/www/html/ProjetoBudega/projetoBudega/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(320): Illuminate\\Foundation\\Application->bootstrapWith(Array)
+#14 /var/www/html/ProjetoBudega/projetoBudega/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(129): Illuminate\\Foundation\\Console\\Kernel->bootstrap()
+#15 /var/www/html/ProjetoBudega/projetoBudega/artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#16 {main}
+"} 
