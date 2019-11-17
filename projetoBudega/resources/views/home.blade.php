@@ -2,31 +2,6 @@
 
 @section('content')
 
-    <div class="flex-wrap">
-      <!-- Menu superior -->
-      <nav class="navbar navbar-expand-lg navbar-light bg-dark text-white">
-        <a class="navbar-brand text-white" href="dashboard.html">QBudega</a>
-        <button class="navbar-toggler bg-white" type="button" data-toggle="collapse" data-target="#menu" aria-controls="menu" aria-expanded="false" aria-label="Alterna navegação">
-          <span class="navbar-toggler-icon text-white"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="menu">
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-              <a class="nav-link text-white px-4" href="#" data-toggle="modal" data-target="#configUser">Configurações</a>
-            </li>
-            <li class="nav-item active">
-              <a class="nav-link text-white px-4" href="#" data-toggle="modal" data-target="#about">Sobre</a>
-            </li>
-            <li class="nav-item active">
-              <a class="nav-link text-white px-4" href="login.html">Sair</a>
-            </li>
-            <li class="nav-item active">
-              <a class="nav-link text-white px-4" href="login.html"> {{ Auth::user()->name }}</a>
-            </li>
-          </ul>
-        </div>
-      </nav>
-         
       <!-- Links Modais -->
       <div class="w-100 text-center">
         <a href="compra_produto.html" class="btn btn-outline-dark mx-1 mt-4">+ Compra</a> 
@@ -43,7 +18,7 @@
             <div class="card-body">
               <h5 class="card-title">Compras</h5>
               <p class="card-text"></p>
-              <a href="compras.html" class="btn btn-secondary">Ver mais</a>
+              <a href="{{ route('purshases') }}" class="btn btn-secondary">Ver mais</a>
             </div>
           </div>
         </div>
@@ -53,7 +28,7 @@
             <div class="card-body">
               <h5 class="card-title">Produtos</h5>
               <p class="card-text"></p>
-              <a href="produtos.html" class="btn btn-secondary">Ver mais</a>
+              <a href="{{ route('products') }}" class="btn btn-secondary">Ver mais</a>
             </div>
           </div>
         </div>
@@ -63,7 +38,7 @@
             <div class="card-body">
               <h5 class="card-title">Dívidas</h5>
               <p class="card-text"></p>
-              <a href="dividas.html" class="btn btn-secondary">Ver mais</a>
+              <a href="{{ route('debtors') }}" class="btn btn-secondary">Ver mais</a>
             </div>
           </div>
         </div>
@@ -73,7 +48,7 @@
             <div class="card-body">
               <h5 class="card-title">Fornecedores</h5>
               <p class="card-text"></p>
-              <a href="fornecedores.html" class="btn btn-secondary">Ver mais</a>
+              <a href="{{ route('suppliers') }}" class="btn btn-secondary">Ver mais</a>
             </div>
           </div>
         </div>
@@ -83,7 +58,7 @@
             <div class="card-body">
               <h5 class="card-title">Clientes</h5>
               <p class="card-text"></p>
-              <a href="clientes.html" class="btn btn-secondary">Ver mais</a>
+              <a href="{{ route('clients') }}" class="btn btn-secondary">Ver mais</a>
             </div>
           </div>
         </div>

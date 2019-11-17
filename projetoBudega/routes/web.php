@@ -19,7 +19,7 @@ Route::get('/test', function () {
 Route::group(['middleware' => 'auth'], function () {
     Route::get('/products', function(){
         return view('products');
-    });
+    })->name('products');
     
     Route::get('/clients', function(){
         return view('clients');
@@ -27,11 +27,15 @@ Route::group(['middleware' => 'auth'], function () {
     
     Route::get('/suppliers', function(){
         return view('suppliers');
-    });
+    })->name('suppliers');
     
     Route::get('/debtors', function(){
         return view('debtors');
-    });
+    })->name('debtors');
+    
+    Route::get('/purshases', function(){
+        return view('purshases');
+    })->name('purshases');
 });
 
 
