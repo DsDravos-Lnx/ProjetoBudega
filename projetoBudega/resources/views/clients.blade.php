@@ -1,7 +1,7 @@
 
 <?php
   $url = "http://localhost:8086/api/clients/";
-  $clients = json_decode(file_get_contents($url));
+  $clients = json_decode(file_get_contents($url));  
 ?>
 
 @extends('layouts.app')
@@ -13,27 +13,39 @@
         <thead class="thead-dark">
           <tr>
             <th scope="col" class="w-25">Cliente</th>
-            <th scope="col" class="w-75">Detalhes</th>
+            <th scope="col" class="w-50">Detalhes</th>
+            <th scope="col" class="w-25">Açoes</th>
           </tr>
         </thead>
         <tbody class="tbody-dark">
+          
           <?php
+            
             foreach($clients->data as $Client){
+
               echo "<tr>";
               
               echo "<th scope='col' class='w-25'>". $Client->name . "</th>";
               
-              echo "<th scope='col' class='w-75'>";
+              echo "<th scope='col' class='w-50'>";
                 echo "CPF: ". $Client->cpf . "<br/>";
                 echo "Endereço: ". $Client->address . "<br/>";
                 echo "Contato: ". $Client->contact . "<br/>";
                 echo "Idade: ". $Client->age . "<br/>";
-                echo "Sexo: ". $Client->gender . "<br/>";
-              echo "</th";
-
+                echo "Sexo: ". $Client->gender . "<br/> </th>";
+              echo "<th scope='col' class='w-25'>";
+                
+              echo "<button type='button' class='btn btn-primary'> Editar </button><br/><br/>";  
+              echo "<form action='test' method='GET'>";
+                echo "<input name='id' type='hidden' value='$Client->id' /> <input type='submit'>";
+                // echo "<input type='submit' class='btn btn-danger'> Deletar </button><br/></th>";  
+              echo "</form>";
+                
+                
               echo "</tr>";
             }
           ?>
+
         </tbody>
       </table>
     </div>
