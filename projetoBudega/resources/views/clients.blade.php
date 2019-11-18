@@ -36,7 +36,7 @@
               echo "<th scope='col' class='w-25'>";
                 
               echo "<button type='button' class='btn btn-primary'> Editar </button><br/><br/>";  
-              echo "<form action='test' method='GET'>";
+              echo "<form action='test' method='POST'>";
                 echo "<input name='id' type='hidden' value='$Client->id' /> <input type='submit'>";
                 // echo "<input type='submit' class='btn btn-danger'> Deletar </button><br/></th>";  
               echo "</form>";
