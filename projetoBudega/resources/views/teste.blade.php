@@ -1,7 +1,7 @@
 <?php
     @include('clients');
 
-    $id = (integer)$_POST['id'];
+    $id = (integer)$_GET['id'];
 
     $ch = curl_init();
     curl_setopt($ch, CURLOPT_URL, 'http://localhost:8086/api/clients/delete/'.$id);
